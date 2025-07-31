@@ -1,0 +1,119 @@
+@import url('../../.cache/wal/colors-waybar.css');
+
+* {
+  font-family: "DM Sans", "Noto Nerd Font Propo", sans-serif;
+  font-size: 16px;
+  border-radius: 50px;
+  font-weight: bold;
+  transition: background-color .3s ease;
+  /* background-color: @background; */
+  color: @foreground;
+  padding: 0px 10px;
+} /* The bar as a whole. */
+
+window#waybar {
+  background-color: transparent;
+  color: transparent;
+} /* The rectangle */
+
+.modules-right {
+  margin-right: 10px;
+}
+
+#workspaces {
+  background-color: @background;
+  padding: 2px 2px 2px 2px;
+  border-radius: 50px;
+  margin-left: 10px;
+}
+
+#workspaces button.active {
+  background-color: transparent;
+  color: @foreground;
+  padding: 5px 24px;
+}
+
+#workspaces button.active:hover {
+  color: transparent;
+  background: inherit;
+}
+
+#workspaces button.empty {
+  color: @color4;
+}
+
+#workspaces button {
+  background-color: transparent;
+  color: @cursor;
+  transition: margin 150ms ease-in-out, padding 150ms ease-in-out;
+  transition: background-color 0.3s ease, color 0.3s ease, padding 0.2s ease;
+}
+
+#workspaces button:hover {
+  background: @cursor;
+}
+
+#workspaces button.urgent {
+  background-color: @background;
+  color: @color4;
+}
+
+#battery,
+
+
+#pulseaudio {
+	background-color: @background;
+}
+
+#backlight,
+#custom-pacman,
+#network,
+#clock,
+/* #custom-weather, */
+#custom-media,
+#window,
+#cpu,
+#memory,
+#disk,
+
+
+#tray {
+    background-color: @background;
+    color: @foreground;
+}
+
+
+#tray menu * {
+  background-color: @background;
+  border-radius: 2.5px;
+  transition: all .3s ease;
+}
+
+#tray menu *:hover {
+    background: @color1;
+}
+
+#bluetooth,
+#custom-launcher,
+#custom-notification,
+
+#power-profiles-daemon {
+  background-color: @background;
+  padding: 0 15px 0 15px;
+  margin: 0 0 0 12px;
+}
+
+
+#window.hidden {
+    opacity: 0;
+    min-width: 0;
+    min-height: 0;
+    padding: 0;
+    margin: 0;
+    border: none;
+}
+
+window#waybar.empty #window {
+    background-color: transparent;
+}
+

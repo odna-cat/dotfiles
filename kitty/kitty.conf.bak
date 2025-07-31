@@ -1,0 +1,22 @@
+# include other.conf
+include ./theme.conf
+# will be useful when pywal walks into the bar
+
+# change monospace to something else when you have a cool nerdfont to boot
+font_family	monospace
+bold_font	auto
+italic_font	auto
+bold_italic_font	auto
+
+allow_remote_control true
+
+underline_hyperlinks always
+
+background_opacity 1
+
+enable_audio_bell no
+
+# BEGIN_KITTY_THEME
+# Afterglow
+include current-theme.conf
+# END_KITTY_THEME
