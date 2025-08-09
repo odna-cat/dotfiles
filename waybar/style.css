@@ -60,7 +60,6 @@ window#waybar {
 
 #battery,
 
-
 #pulseaudio {
 	background-color: @background;
 }
@@ -69,7 +68,7 @@ window#waybar {
 #custom-pacman,
 #network,
 #clock,
-/* #custom-weather, */
+#custom-weather,
 #custom-media,
 #window,
 #cpu,
