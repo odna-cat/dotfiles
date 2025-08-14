@@ -15,7 +15,7 @@ set $right l
 
 # Commands
 set $term kitty
-set $file thunar
+set $file "kitty -e nnn -d -e -H"
 set $text nvim
 set $menu wofi --show=drun,run | xargs swaymsg exec
 
@@ -85,7 +85,7 @@ exec swayidle -w \
     bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
 
     # Screenshot
-    bindsym Print exec 'slurp | grim -g - - | wl-copy && dunstify "Screenshot saved to clipboard."'
+    bindsym Print exec 'slurp | grim -g - - | wl-copy && notify-send -u "Copied to clipboard."  '
 #
 # Moving around:
 #

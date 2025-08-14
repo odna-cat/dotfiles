@@ -9,3 +9,7 @@ halign=fill
 orientation=vertical
 content_halign=fill
 drun-display_generic=true
+matching=contains
+allow_images=true
+line_wrap=char
+term=kitty
