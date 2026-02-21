@@ -1,0 +1,5 @@
+// ===== STARTUP =====
+spawn-sh-at-startup "qs -c ~/.config/quickshell"
+
+spawn-at-startup "wl-paste" "--watch" "cliphist store"
+spawn-at-startup "dbus-update-activation environment" "--systemd" "WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
