@@ -1,0 +1,157 @@
+{
+		"layer": "top",
+		"exclusive": "true",
+		"position": "left",
+		// "height": 1205, // Waybar height (to be removed for auto height)
+		"width": 40, // Waybar width
+		"spacing": 0, // Gaps between modules (4px)
+		"reload_style_on_change": true,
+		"modules-left": [
+				"niri/workspaces",
+				"tray"
+		],
+		"modules-center": [
+				"mpris"
+		],
+		"modules-right": [
+				"clock",
+				"pulseaudio",
+				"battery",
+				"network",
+				"bluetooth"
+		],
+
+		"niri/workspaces": {
+				"format": "{icon}",
+				"format-icons": {
+						"active": "(x)",
+						"default": "( )",
+						"empty": "( )"
+				}
+		},
+
+		"clock": {
+				"format": "{:%H\n%M}",
+				"tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "calendar": {
+                    "mode"          : "month",
+                    "mode-mon-col"  : 3,
+                    "weeks-pos"     : "right",
+                    "on-scroll"     : 1,
+                    "format": {
+                              "months":     "<span color='#ffead3'><b>{}</b></span>",
+                              "days":       "<span color='#ecc6d9'><b>{}</b></span>",
+                              "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
+                              "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
+                              "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+                              }
+                    },
+        "actions":  {
+                    "on-click-right": "mode",
+                    "on-scroll-up": "tz_up",
+                    "on-scroll-down": "tz_down",
+                    "on-scroll-up": "shift_up",
+                    "on-scroll-down": "shift_down"
+                    }
+		},
+
+		"backlight": {
+				"device": "intel_backlight",
+				"format": "{icon} {percent}%",
+				"format-icons": [
+						"󰃞",
+						"󰃟",
+						"󰃠"
+				]
+		},
+
+		"power-profiles-daemon": {
+				"format": "{icon}",
+				"tooltip": false,
+				"format-icons": {
+						"default": "",
+						"performance": "󰠠",
+						"balanced": "󰚀",
+						"power-saver": "󰌪"
+				}
+		},
+
+		"mpris": {
+				"rotate": 90,
+				"max-length": 30,
+				"interval": 10,
+				"format": "{player_icon} {dynamic}",
+				"format-paused": "{status_icon} {artist} {title}",
+				"on-click-middle": "playerctl play-pause",
+				"on-click": "playerctl previous",
+				"on-click-right": "playerctl next",
+				"scroll-step": 5.0,
+				"smooth-scrolling-threshold": 1,
+				"tooltip": false,
+				"player-icons": {
+						"chromium": "",
+						"default": "",
+						"firefox": "",
+						"kdeconnect": "",
+						"mopidy": "",
+						"rmpc": "󰐹",
+						"spotify": "󰎆",
+						"vlc": "󰕼"
+				}
+		},
+		"network": {
+				"format-wifi": "",
+				"format-ethernet":"",
+				"format-disconnected": "",
+				"tooltip-format-disconnected": "Error",
+				"tooltip-format-wifi": "{essid} ({signalStrength}%) ",
+				"tooltip-format-ethernet": "{ifname} 🖧 ",
+				"on-click": "nmtui"
+		},
+
+		"pulseaudio": {
+				"format": "{icon} ",
+				"tooltip-format": "Playing at {volume}%",
+				"scroll-step": 5,
+				"format-muted": "",
+				"on-click": "pavucontrol",
+				"format-icons": {
+						"default": [""," "," "]
+				}
+		},
+
+		"battery": {
+				"interval":25,
+				"states": {
+						"good": 95,
+						"warning": 30,
+						"critical": 20
+				},
+				"format": "{icon}",
+				"format-charging": "",
+				"format-plugged": " ",
+				"format-icons": {
+	"default": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+	"charging": ["󰢟", "󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅"]
+						},
+					"events": {
+		"on-discharging-warning": "notify-send -u normal 'Low Battery'",
+		"on-discharging-critical": "notify-send -u critical 'Very Low Battery'",
+		"on-charging-100": "notify-send -u normal 'Battery Full!'",
+		"on-discharging": "notify-send -u normal 'Power Switch' Discharging",
+		"on-charging": "notify-send -u normal 'Power Switch' Charging'"
+	}
+		},
+
+		"bluetooth": {
+				"format": "󰂲",
+				"format-disabled": "",
+				"format-connected": "󰂱",
+				"on-click": "foot bluetui"
+		},
+
+		"tray": {
+				"icon-size": 14,
+				"spacing": 10
+		}
+}

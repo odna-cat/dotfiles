@@ -1,0 +1,6 @@
+// Baba is You fallback theme
+layout {
+		focus-ring {
+				active-color "#d9396a" // is you when focused
+		}
+}

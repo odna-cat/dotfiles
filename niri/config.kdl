@@ -1,0 +1,6 @@
+include "cfg/mappings.kdl"
+include "cfg/environment.kdl"
+include "cfg/startup.kdl"
+include "cfg/windowrule.kdl"
+include "cfg/animations.kdl"
+include "cfg/layout.kdl"

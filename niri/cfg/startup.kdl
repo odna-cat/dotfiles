@@ -1,0 +1,9 @@
+// ===== STARTUP =====
+// spawn-at-startup "waybar"
+spawn-at-startup "qs" "-c" "noctalia-shell"
+spawn-at-startup "wal -R"
+// spawn-sh-at-startup "uwsm app -- awww-daemon"
+spawn-at-startup "/usr/lib/hyprpolkitagent/hyprpolkitagent"
+
+spawn-at-startup "wl-paste" "--watch" "cliphist store"
+spawn-at-startup "dbus-update-activation environment" "--systemd" "WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"

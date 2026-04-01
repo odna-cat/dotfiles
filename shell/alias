@@ -1,0 +1,7 @@
+alias \
+\
+c="clear" \
+v="nvim" \
+f="yazi" \
+cdd="cd_to_dir $PWD" \
+wp="~/scripts/walpick.sh"

@@ -1,0 +1,41 @@
+// ────────────── Window Rules ──────────────
+// https://github.com/YaLTeR/niri/wiki/Configuration:-Window-Rules
+
+// This also includes layer rules, for waybar, for example.
+
+    window-rule {
+        match app-id=r#"firefox$"# title="^Picture-in-Picture$"
+        open-floating true // Always float Firefox PiP windows
+    }
+
+	window-rule {
+			match title="^Picture-in-picture$"
+			open-floating true // Always float in Helium PiP windows
+	}
+
+    window-rule {
+        geometry-corner-radius 20 // Set every window radius to 20
+        clip-to-geometry true
+    }
+
+	window-rule { // no toasts for steam !
+		match app-id="steam" title=r#"^notificationtoasts_\d+_desktop$"#
+		default-floating-position x=10 y=10 relative-to="bottom-right"
+}
+
+layer-rule {
+		match namespace="waybar"
+		// match at-startup=true
+
+		opacity 0.9
+		block-out-from "screencast"
+		// block-out-from "screen-capture"
+
+		place-within-backdrop true
+		// baba-is-float true
+}
+
+layer-rule {
+		match namespace="^rofi$" // launcher for fuzzel
+		baba-is-float true
+}
